@@ -53,6 +53,12 @@
       "image": "https://vignette.wikia.nocookie.net/p__/images/8/88/Jessie_Toy_Story_3.png/revision/latest?cb=20161023024601&path-prefix=protagonist",
       "likes": 0,
       "id": 9
+    },
+    {
+      "name": "Mrs. Potato Head",
+      "image": "https://static.wikia.nocookie.net/pixar/images/a/a7/BEST_MRS.POTATO_HEAD_EVER.png/revision/latest?cb=20210210225058",
+      "likes": 2,
+      "id": 10
     }
   ]
 }
