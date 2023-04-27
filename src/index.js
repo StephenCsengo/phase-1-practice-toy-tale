@@ -29,11 +29,7 @@ function RenderOneCard(toy) {
   document.getElementById("toy-collection").appendChild(card);
 }
 
-function getAllToys() {
-  fetch("http://localhost:3000/toys")
-  .then(response =>response.json())
-  .then(toys => toys.forEach(toy => RenderOneCard(toy)));
-}
+
 function handleSumbit(e) {
   e.preventDefault();
   let toyObj = {
@@ -41,13 +37,24 @@ function handleSumbit(e) {
     image:e.target.image.value,
     likes:0
   };
-  fetch("http://localhost:3000/toys"), {
+  RenderOneCard(toyObj);
+  postToy(toyObj);
+}
+
+function getAllToys() {
+  fetch("http://localhost:3000/toys")
+  .then(response =>response.json())
+  .then(toys => toys.forEach(toy => RenderOneCard(toy)));
+}
+
+function postToy(toy) {
+  fetch("http://localhost:3000/toys", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json"
     },
-    body: JSON.stringify(toyObj)
-  };
+    body: JSON.stringify(toy)
+  });
 }
 document.querySelector(".add-toy-form").addEventListener("submit", handleSumbit)
